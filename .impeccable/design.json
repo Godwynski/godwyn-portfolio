@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-28T00:50:40Z",
+  "title": "Design System: Sketch",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "Warm Paper Ground",
+        "canonical": "#f7f2e7",
+        "tonalRamp": ["#3d3b38", "#6a6660", "#969188", "#b8b2a8", "#d6cfc2", "#e8e2d5", "#f7f2e7", "#fdfbf7"]
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "Pencil Ink",
+        "canonical": "#38352f",
+        "tonalRamp": ["#141311", "#262420", "#38352f", "#4f4b43", "#69645a", "#878174", "#aba597", "#d1ccc1"]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "#514d44",
+        "tonalRamp": ["#1c1a17", "#322f2a", "#514d44", "#6b665a", "#888274", "#a7a091", "#c8c2b5", "#ebe7df"]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Erased-Line Grey",
+        "canonical": "#b3ac9d",
+        "tonalRamp": ["#2e2b26", "#575249", "#7f786c", "#9f9788", "#b3ac9d", "#cbd0c2", "#e3dfd7", "#f4f2ee"]
+      },
+      "accent": {
+        "role": "secondary",
+        "displayName": "Pencil Red Accent",
+        "canonical": "#9e3a2e",
+        "tonalRamp": ["#36120e", "#5e1f18", "#822c22", "#9e3a2e", "#be4f42", "#d86b5e", "#ec9085", "#f8c5bf"]
+      },
+      "annotation": {
+        "role": "secondary",
+        "displayName": "Blue Annotation",
+        "canonical": "#344c69",
+        "tonalRamp": ["#111924", "#1d2a3c", "#2b3d54", "#344c69", "#4b688c", "#6885aa", "#8fa7c7", "#c2d4ea"]
+      },
+      "highlight": {
+        "role": "tertiary",
+        "displayName": "Yellow Highlighter",
+        "canonical": "#f0dfa0",
+        "tonalRamp": ["#423a19", "#6e6128", "#998636", "#c4ac44", "#dfc558", "#ecd378", "#f0dfa0", "#faf2d4"]
+      },
+      "scrap": {
+        "role": "neutral",
+        "displayName": "Paper Scrap",
+        "canonical": "#fcf8ef",
+        "tonalRamp": ["#403e39", "#6c6860", "#989387", "#b8b2a7", "#dad4c7", "#ede7dc", "#fcf8ef", "#ffffff"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Working Marker",
+        "purpose": "Large handwritten statements, hero declarations, and major headings."
+      },
+      "headline": {
+        "displayName": "Marker Headline",
+        "purpose": "Section titles and prominent topics."
+      },
+      "title": {
+        "displayName": "Marker Title",
+        "purpose": "Card titles, feature labels, and note headings."
+      },
+      "body": {
+        "displayName": "Working Hand Body",
+        "purpose": "Narrative reading, paragraphs, and open thoughts."
+      },
+      "reading": {
+        "displayName": "Working Hand Reading",
+        "purpose": "Continuous long-form reading, sized generously for comfort."
+      },
+      "detail": {
+        "displayName": "Working Hand Detail",
+        "purpose": "Marginalia, captions, metadata tags, and small notes."
+      }
+    },
+    "shadows": [
+      {
+        "name": "control-offset",
+        "value": "2px 2px 0px #38352f",
+        "purpose": "Hard pencil offset shadow under primary buttons and interactive elements."
+      },
+      {
+        "name": "accent-offset",
+        "value": "2px 2px 0px #9e3a2e",
+        "purpose": "Hard red offset shadow under priority action buttons."
+      },
+      {
+        "name": "scrap-lift",
+        "value": "1px 2px 0px rgba(56, 53, 47, 0.15)",
+        "purpose": "Subtle paper sheet elevation for notes and taped mounts."
+      }
+    ],
+    "motion": [
+      {
+        "name": "control-quick",
+        "value": "100ms ease",
+        "purpose": "Brief physical tilt and shadow compression for controls."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "medium",
+        "value": "680px"
+      },
+      {
+        "name": "wide",
+        "value": "1050px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Standard hand-drawn button on pale paper scrap with hard pencil shadow and yellow hover wash.",
+      "html": "<button class=\"ds-btn-primary\">Take Action</button>",
+      "css": ".ds-btn-primary { background: #fcf8ef; color: #38352f; border: 1.5px solid #38352f; border-radius: 9px 4px 17px 5px / 4px 12px 5px 9px; box-shadow: 2px 2px 0px #38352f; padding: 10px 22px; font-family: 'Sketch Working Hand', 'Patrick Hand', cursive; font-size: 23px; font-weight: 600; cursor: pointer; transition: transform 100ms ease, box-shadow 100ms ease, background 100ms ease; } .ds-btn-primary:hover { background: #f0dfa0; transform: rotate(-0.5deg); box-shadow: 1px 1px 0px #38352f; } .ds-btn-primary:active { transform: translate(2px, 2px); box-shadow: 0px 0px 0px transparent; } .ds-btn-primary:focus-visible { outline: 2px dashed #344c69; outline-offset: 3px; }"
+    },
+    {
+      "name": "Accent Button",
+      "kind": "button",
+      "refersTo": "button-accent",
+      "description": "High-priority red call-to-action button with hard pencil shadow.",
+      "html": "<button class=\"ds-btn-accent\">Primary Decision</button>",
+      "css": ".ds-btn-accent { background: #9e3a2e; color: #fcf8ef; border: 1.5px solid #38352f; border-radius: 9px 4px 17px 5px / 4px 12px 5px 9px; box-shadow: 2px 2px 0px #38352f; padding: 10px 22px; font-family: 'Sketch Working Hand', 'Patrick Hand', cursive; font-size: 23px; font-weight: 600; cursor: pointer; transition: transform 100ms ease, box-shadow 100ms ease, background 100ms ease; } .ds-btn-accent:hover { transform: rotate(0.5deg); box-shadow: 1px 1px 0px #38352f; } .ds-btn-accent:active { transform: translate(2px, 2px); box-shadow: 0px 0px 0px transparent; } .ds-btn-accent:focus-visible { outline: 2px dashed #344c69; outline-offset: 3px; }"
+    },
+    {
+      "name": "Taped Reference Mount",
+      "kind": "card",
+      "refersTo": "card-scrap",
+      "description": "Pale paper scrap mount holding visual media or reference details with translucent tape.",
+      "html": "<div class=\"ds-mount\"><div class=\"ds-tape\"></div><div class=\"ds-mount-content\"><strong>Reference Note:</strong> Key findings documented on the working sheet.</div></div>",
+      "css": ".ds-mount { position: relative; background: #fcf8ef; border: 1.5px solid #b3ac9d; border-radius: 2px 4px 3px 5px / 4px 2px 5px 3px; box-shadow: 1px 2px 0px rgba(56, 53, 47, 0.15); padding: 22px 20px; font-family: 'Sketch Working Hand', 'Patrick Hand', cursive; font-size: 23px; color: #38352f; transform: rotate(-0.75deg); } .ds-tape { position: absolute; top: -10px; left: 35%; width: 60px; height: 20px; background: rgba(240, 223, 160, 0.7); border-left: 1px dashed rgba(179, 172, 157, 0.6); border-right: 1px dashed rgba(179, 172, 157, 0.6); transform: rotate(1.5deg); } .ds-mount-content { line-height: 1.4; }"
+    },
+    {
+      "name": "Annotation Note",
+      "kind": "chip",
+      "refersTo": "annotation-badge",
+      "description": "Blue handwritten marginalia tag for annotations and secondary thoughts.",
+      "html": "<span class=\"ds-annotation\">* note: verify against source</span>",
+      "css": ".ds-annotation { display: inline-block; color: #344c69; font-family: 'Sketch Working Hand', 'Patrick Hand', cursive; font-size: 21px; border-bottom: 1.5px dashed #344c69; padding: 2px 6px; transform: rotate(1deg); }"
+    },
+    {
+      "name": "Hand-Drawn Disclosure",
+      "kind": "custom",
+      "refersTo": "card-scrap",
+      "description": "Accessible native disclosure accordion with pencil borders and marked indicator.",
+      "html": "<details class=\"ds-disclosure\"><summary class=\"ds-summary\">View details & specifications</summary><div class=\"ds-details-content\">Full breakdown of the technical process and observations recorded here.</div></details>",
+      "css": ".ds-disclosure { background: #fcf8ef; border: 1.5px solid #38352f; border-radius: 9px 4px 17px 5px / 4px 12px 5px 9px; padding: 12px 18px; font-family: 'Sketch Working Hand', 'Patrick Hand', cursive; font-size: 23px; color: #38352f; margin: 12px 0; } .ds-summary { font-weight: 600; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; } .ds-summary::-webkit-details-marker { display: none; } .ds-summary:focus-visible { outline: 2px dashed #344c69; outline-offset: 3px; } .ds-details-content { margin-top: 10px; padding-top: 10px; border-top: 1px dashed #b3ac9d; font-size: 21px; color: #514d44; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Shared Working Sheet",
+    "overview": "The Sketch design system treats the digital surface as a living desk workspace—a shared working sheet composed of tactile warm paper, dark pencil ink, blue marginalia, red editorial revisions, and soft yellow highlights. It balances the immediate human intimacy of hand-drafted notes with rigorous underlying typography and structured information hierarchy.\n\nRather than sterile digital perfection or noisy skeuomorphism, Sketch uses intentional paper scraps, fine 1.5px pencil strokes, and slight organic rotations (-1° to 1.5°) to create a thoughtful craft aesthetic. Whitespace functions as open thought space, ensuring uninterrupted reading flow, instant scanability, and clear calls to action.",
+    "keyCharacteristics": [
+      "Warm Living Paper: Unbleached warm ground (#f7f2e7) with graphite ink (#38352f) and lighter scraps (#fcf8ef).",
+      "Original Handwritten Pairing: Bold Working Marker paired with comfortable, spacious Working Hand.",
+      "Annotative Color Roles: Blue notes, red corrections, and pale yellow highlights.",
+      "Organic Affordance: Uneven hand-drawn borders, tactile hard offsets, and taped editorial references.",
+      "Accessible Foundations: Semantic HTML controls, dashed blue focus indicators, and reduced-motion support."
+    ],
+    "rules": [
+      {
+        "name": "The Paper & Pencil Rule",
+        "body": "White #FFFFFF is never used as an open canvas; all surfaces start on warm paper ground (#f7f2e7), and text uses graphite ink (#38352f) to maintain warm paper coherence.",
+        "section": "colors"
+      },
+      {
+        "name": "The Red Correction Rule",
+        "body": "Red (#9e3a2e) is reserved for singular high-leverage actions and corrections. It appears on no more than 10% of any given view to maintain its urgency.",
+        "section": "colors"
+      },
+      {
+        "name": "The Intentional Scrap Rule",
+        "body": "Lighter paper scraps (#fcf8ef) must never be stacked haphazardly; each scrap corresponds to a discrete thought, quote, or taped reference.",
+        "section": "colors"
+      },
+      {
+        "name": "The Breathing Room Rule",
+        "body": "Handwritten text runs together if tightly tracked or set in narrow line heights. Body handwriting must maintain line-height: 1.5 and at least 23px base size.",
+        "section": "typography"
+      },
+      {
+        "name": "The Selective Tilt Rule",
+        "body": "Rotations are applied only to discrete notes, tape strips, or occasional standalone headings (-1° to 1.5°). Continuous paragraphs remain untransformed to preserve effortless reading.",
+        "section": "typography"
+      },
+      {
+        "name": "The Zero-Blur Rule",
+        "body": "Soft Gaussian shadows are strictly prohibited. Depth is rendered solely through crisp 1-2px hard offsets and physical tonal contrast.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Paper Settle Rule",
+        "body": "Active/pressed controls physically compress down onto the sheet, collapsing their offset shadow to 0px.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Organic Edge Rule",
+        "body": "Buttons and containers must use asymmetric border-radius shorthand to avoid cold, machine-cut rectangular boxes.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Restrained Texture Rule",
+        "body": "No heavy crumpled paper noise or distracting SVG turbulence. Clean, subtle grain or untextured flat warm sheets preserve legibility.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do maintain authentic semantic controls (<button>, <a>, <details>, <input>) beneath all sketch styling.",
+      "Do keep reading handwriting generously sized (minimum 23px for reading, 24px for body) to ensure continuous legibility.",
+      "Do use a visible 2px dashed blue (#344c69) focus outline for all interactive elements to guarantee keyboard accessibility.",
+      "Do preserve actual photograph detail inside pale paper mounts rather than post-processing pictures into fake drawings.",
+      "Do respect prefers-reduced-motion by removing tilts and transforms while preserving state color and stroke feedback.",
+      "Do use generous spacing between open thought sections to keep the working sheet uncluttered and comfortable to read."
+    ],
+    "donts": [
+      "Don't use illegible, ornate cursive or script fonts that make words difficult to decipher.",
+      "Don't apply heavy crumpled-paper textures, noisy skeuomorphic overlays, or dense doodle borders that distract from content.",
+      "Don't use soft Gaussian drop shadows or polished geometric cards.",
+      "Don't animate strokes drawing themselves across the page; keep drawings, handwriting, and paper still.",
+      "Don't tilt entire paragraphs or large content blocks; limit small rotations to buttons, tape strips, and scrap notes.",
+      "Don't obscure text or alter natural document reading order with decorative annotations."
+    ]
+  }
+}
