@@ -58,13 +58,13 @@ export function Footer({ onOpenResume }: FooterProps) {
       {/* Lightly Divided Bottom Bar */}
       <div className="w-full pt-6 border-t border-dashed border-line grid grid-cols-1 md:grid-cols-2 gap-4 text-[21px] text-ink-muted">
         <div>
-          <strong className="block text-ink text-[22px]">
+          <strong className="block text-ink text-[23px]">
             {profile.name} &bull; Developer Profile
           </strong>
           <span>{profile.location}</span>
         </div>
         <div className="md:text-right">
-          <strong className="block text-ink text-[22px]">
+          <strong className="block text-ink text-[23px]">
             Direct Verification & Contact
           </strong>
           <span>

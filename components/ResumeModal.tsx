@@ -61,11 +61,11 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           >
             {profile.name}
           </h2>
-          <p className="text-[22px] font-bold text-accent">{profile.title}</p>
-          <p className="text-[20px] text-ink-muted mt-1">
+          <p className="text-[23px] font-bold text-accent">{profile.title}</p>
+          <p className="text-[21px] text-ink-muted mt-1">
             {profile.location}
           </p>
-          <div className="flex flex-wrap gap-x-4 gap-y-1 text-[20px] text-ink mt-2">
+          <div className="flex flex-wrap gap-x-4 gap-y-1 text-[21px] text-ink mt-2">
             <span>
               <strong>Phone:</strong>{" "}
               <a href={`tel:${profile.phone.replace(/\s+/g, "")}`} className="text-annotation underline">
@@ -98,13 +98,13 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             Education
           </h3>
           <div>
-            <strong className="block text-[22px] text-ink">
+            <strong className="block text-[23px] text-ink">
               {resume.education.institution}
             </strong>
             <span className="text-[21px] italic text-ink-muted block">
               {resume.education.degree} — {resume.education.status}
             </span>
-            <p className="text-[20px] text-ink-muted mt-1">
+            <p className="text-[21px] text-ink-muted mt-1">
               <strong>Coursework:</strong> {resume.education.coursework.join(", ")}.
             </p>
           </div>
@@ -112,7 +112,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             <strong className="block text-[21px] text-ink">
               {resume.education.secondary.school}
             </strong>
-            <span className="text-[20px] text-ink-muted">
+            <span className="text-[21px] text-ink-muted">
               {resume.education.secondary.honors} ({resume.education.secondary.years})
             </span>
           </div>
@@ -123,7 +123,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           <h3 className="font-marker text-2xl font-bold text-ink border-b border-line pb-1 mb-2">
             Technical Skills Profile
           </h3>
-          <ul className="text-[20px] space-y-1 text-ink">
+          <ul className="text-[21px] space-y-1 text-ink">
             <li>
               <strong>Languages:</strong> {resume.skillsProfile.languages.join(", ")}
             </li>
@@ -151,11 +151,11 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             {projects.map((proj, pIdx) => (
               <div key={pIdx}>
                 <div className="flex flex-wrap items-baseline justify-between gap-1">
-                  <strong className="text-[22px] text-ink">{proj.title}</strong>
-                  <span className="text-[19px] text-annotation">{proj.period}</span>
+                  <strong className="text-[23px] text-ink">{proj.title}</strong>
+                  <span className="text-[21px] text-annotation">{proj.period}</span>
                 </div>
-                <div className="text-[19px] italic text-ink-muted">{proj.stack}</div>
-                <ul className="list-disc list-inside text-[20px] mt-1 space-y-0.5 text-ink">
+                <div className="text-[21px] italic text-ink-muted">{proj.stack}</div>
+                <ul className="list-disc list-inside text-[21px] mt-1 space-y-0.5 text-ink">
                   {proj.highlights.map((h, hIdx) => (
                     <li key={hIdx}>{h}</li>
                   ))}
@@ -174,10 +174,10 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             {resume.workExperience.map((work, wIdx) => (
               <div key={wIdx}>
                 <strong className="text-[21px] text-ink block">{work.role}</strong>
-                <span className="text-[19px] text-ink-muted italic block">
+                <span className="text-[21px] text-ink-muted italic block">
                   {work.company} &bull; {work.type}
                 </span>
-                <ul className="list-disc list-inside text-[20px] mt-1 space-y-0.5 text-ink">
+                <ul className="list-disc list-inside text-[21px] mt-1 space-y-0.5 text-ink">
                   {work.description.map((d, dIdx) => (
                     <li key={dIdx}>{d}</li>
                   ))}
@@ -197,10 +197,10 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               <strong className="text-[21px] text-ink block">
                 {extra.role} — {extra.organization}
               </strong>
-              <span className="text-[19px] text-ink-muted italic block mb-1">
+              <span className="text-[21px] text-ink-muted italic block mb-1">
                 {extra.period}
               </span>
-              <ul className="list-disc list-inside text-[20px] space-y-0.5 text-ink">
+              <ul className="list-disc list-inside text-[21px] space-y-0.5 text-ink">
                 {extra.description.map((d, dIdx) => (
                   <li key={dIdx}>{d}</li>
                 ))}
