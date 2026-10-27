@@ -40,4 +40,36 @@ describe("ResumeModal", () => {
     fireEvent.keyDown(window, { key: "Escape", code: "Escape" });
     expect(handleClose).toHaveBeenCalledTimes(1);
   });
+
+  it("traps focus inside the modal when Tab is pressed on the boundary elements", () => {
+    const handleClose = vi.fn();
+    render(<ResumeModal isOpen={true} onClose={handleClose} />);
+
+    const closeBtn = screen.getByRole("button", { name: /close resume/i });
+    const closeViewerBtn = screen.getByRole("button", { name: /close viewer/i });
+
+    // Initial focus should be on first focusable element (closeBtn)
+    expect(document.activeElement).toBe(closeBtn);
+
+    // Shift+Tab from closeBtn should wrap to closeViewerBtn
+    fireEvent.keyDown(window, { key: "Tab", shiftKey: true });
+    expect(document.activeElement).toBe(closeViewerBtn);
+
+    // Tab from closeViewerBtn should wrap to closeBtn
+    fireEvent.keyDown(window, { key: "Tab", shiftKey: false });
+    expect(document.activeElement).toBe(closeBtn);
+  });
+
+  it("restores focus to previous active element upon closing", () => {
+    const triggerBtn = document.createElement("button");
+    document.body.appendChild(triggerBtn);
+    triggerBtn.focus();
+    expect(document.activeElement).toBe(triggerBtn);
+
+    const { unmount } = render(<ResumeModal isOpen={true} onClose={vi.fn()} />);
+    unmount();
+
+    expect(document.activeElement).toBe(triggerBtn);
+    document.body.removeChild(triggerBtn);
+  });
 });

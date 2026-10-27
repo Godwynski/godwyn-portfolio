@@ -37,7 +37,7 @@ export function AcademicDisclosures({ items }: AcademicDisclosuresProps) {
             key={idx}
             className="group bg-scrap border-[1.5px] border-ink rounded-control p-3.5 px-5 shadow-control transition-all"
           >
-            <summary className="font-marker text-2xl font-bold text-ink cursor-pointer list-none flex items-center justify-between select-none">
+            <summary className="font-marker text-2xl font-bold text-ink cursor-pointer list-none [&::-webkit-details-marker]:hidden flex items-center justify-between select-none">
               <span>{item.title}</span>
               <span
                 className="text-2xl text-accent transition-transform duration-100 group-open:rotate-45"

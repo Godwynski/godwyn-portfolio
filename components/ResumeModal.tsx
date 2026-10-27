@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { portfolioData } from "@/data/portfolio";
 
 interface ResumeModalProps {
@@ -10,13 +10,46 @@ interface ResumeModalProps {
 
 export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
   const { profile, resume, projects } = portfolioData;
+  const modalRef = useRef<HTMLDivElement>(null);
+  const previousActiveElementRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     if (!isOpen) return;
 
+    previousActiveElementRef.current = document.activeElement as HTMLElement | null;
+
+    const modalElement = modalRef.current;
+    const focusableElements = modalElement?.querySelectorAll<HTMLElement>(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    const firstElement = focusableElements?.[0];
+    const lastElement = focusableElements ? focusableElements[focusableElements.length - 1] : undefined;
+
+    firstElement?.focus();
+
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         onClose();
+        return;
+      }
+
+      if (e.key === "Tab") {
+        if (!focusableElements || focusableElements.length === 0) {
+          e.preventDefault();
+          return;
+        }
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement?.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement?.focus();
+          }
+        }
       }
     };
 
@@ -27,6 +60,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = originalOverflow;
+      previousActiveElementRef.current?.focus();
     };
   }, [isOpen, onClose]);
 
@@ -37,12 +71,15 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-resume-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-ink/50 backdrop-blur-xs"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-ink/50 backdrop-blur-sm"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="relative bg-ground border-2 border-ink rounded-scrap p-6 sm:p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl space-y-6">
+      <div
+        ref={modalRef}
+        className="relative bg-ground border-2 border-ink rounded-scrap p-6 sm:p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl space-y-6"
+      >
         {/* Close Button */}
         <button
           type="button"
