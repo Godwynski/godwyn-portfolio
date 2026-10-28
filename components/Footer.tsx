@@ -9,18 +9,18 @@ export function Footer({ onOpenResume }: FooterProps) {
   const { profile } = portfolioData;
 
   return (
-    <footer className="mt-8 pt-8 border-t-[1.5px] border-line flex flex-col items-center gap-8">
+    <footer className="mt-8 pt-8 border-t-[1.5px] border-line flex flex-col items-center gap-8 w-full">
       {/* Closing Statement */}
-      <div className="text-center max-w-[820px] space-y-4">
-        <h2 className="font-marker text-[clamp(2rem,4.5vw,3.2rem)] font-bold text-accent leading-[1.18] tracking-tight">
+      <div className="text-center max-w-[820px] w-full space-y-4">
+        <h2 className="font-marker text-[clamp(1.65rem,4.5vw,3.2rem)] font-bold text-accent leading-[1.18] tracking-tight break-words">
           &ldquo;Ready to contribute disciplined execution, rapid problem-solving, and reliable development to your engineering team.&rdquo;
         </h2>
 
-        <div className="flex flex-wrap justify-center items-center gap-3.5 pt-2">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center items-stretch sm:items-center gap-3 sm:gap-3.5 pt-2 w-full max-w-lg sm:max-w-none mx-auto">
           <a
             href={`mailto:${profile.email}`}
             aria-label="Email Godwyn"
-            className="inline-flex items-center gap-2 bg-accent text-scrap border-[1.5px] border-ink rounded-control px-5 py-2.5 font-bold shadow-control hover:shadow-[1px_1px_0px_#38352f] hover:brightness-95 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all text-[21px]"
+            className="inline-flex items-center justify-center gap-2 bg-accent text-scrap border-[1.5px] border-ink rounded-control px-4 sm:px-5 py-2.5 font-bold shadow-control hover:shadow-[1px_1px_0px_#38352f] hover:brightness-95 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all text-[21px] min-h-[48px] w-full sm:w-auto break-all sm:break-normal"
           >
             <span>Email: {profile.email}</span>
           </a>
@@ -30,7 +30,7 @@ export function Footer({ onOpenResume }: FooterProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub profile"
-            className="inline-flex items-center gap-2 bg-scrap text-ink border-[1.5px] border-ink rounded-control px-4 py-2.5 font-bold shadow-control hover:bg-highlight hover:shadow-[1px_1px_0px_#38352f] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all text-[21px]"
+            className="inline-flex items-center justify-center gap-2 bg-scrap text-ink border-[1.5px] border-ink rounded-control px-4 py-2.5 font-bold shadow-control hover:bg-highlight hover:shadow-[1px_1px_0px_#38352f] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all text-[21px] min-h-[48px] w-full sm:w-auto"
           >
             <span>GitHub</span>
           </a>
@@ -40,7 +40,7 @@ export function Footer({ onOpenResume }: FooterProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn profile"
-            className="inline-flex items-center gap-2 bg-scrap text-ink border-[1.5px] border-ink rounded-control px-4 py-2.5 font-bold shadow-control hover:bg-highlight hover:shadow-[1px_1px_0px_#38352f] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all text-[21px]"
+            className="inline-flex items-center justify-center gap-2 bg-scrap text-ink border-[1.5px] border-ink rounded-control px-4 py-2.5 font-bold shadow-control hover:bg-highlight hover:shadow-[1px_1px_0px_#38352f] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all text-[21px] min-h-[48px] w-full sm:w-auto"
           >
             <span>LinkedIn</span>
           </a>
@@ -48,7 +48,7 @@ export function Footer({ onOpenResume }: FooterProps) {
           <button
             type="button"
             onClick={onOpenResume}
-            className="inline-flex items-center gap-2 bg-highlight text-[#2b2200] border-[1.5px] border-ink rounded-control px-4 py-2.5 font-bold shadow-control hover:brightness-95 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all text-[21px] cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 bg-highlight text-[#2b2200] border-[1.5px] border-ink rounded-control px-4 py-2.5 font-bold shadow-control hover:brightness-95 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all text-[21px] cursor-pointer min-h-[48px] w-full sm:w-auto"
           >
             <span>Preview Resume</span>
           </button>
@@ -58,13 +58,13 @@ export function Footer({ onOpenResume }: FooterProps) {
       {/* Lightly Divided Bottom Bar */}
       <div className="w-full pt-6 border-t border-dashed border-line grid grid-cols-1 md:grid-cols-2 gap-4 text-[21px] text-ink-muted">
         <div>
-          <strong className="block text-ink text-[23px]">
+          <strong className="block text-ink text-[21px] sm:text-[23px]">
             {profile.name} &bull; Developer Profile
           </strong>
           <span>{profile.location}</span>
         </div>
         <div className="md:text-right">
-          <strong className="block text-ink text-[23px]">
+          <strong className="block text-ink text-[21px] sm:text-[23px]">
             Direct Verification & Contact
           </strong>
           <span>

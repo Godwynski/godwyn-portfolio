@@ -10,7 +10,7 @@ export function SkillsLedger({ ledger }: SkillsLedgerProps) {
     <section aria-labelledby="skills-heading" className="space-y-4">
       <h2
         id="skills-heading"
-        className="font-marker text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-ink flex items-center gap-3"
+        className="font-marker text-[clamp(1.6rem,4.5vw,2.5rem)] font-bold text-ink flex items-center gap-2.5 sm:gap-3"
       >
         <svg
           width="28"
@@ -29,11 +29,11 @@ export function SkillsLedger({ ledger }: SkillsLedgerProps) {
         <span>Technical Skills Profile & Comparison</span>
       </h2>
 
-      <div className="flex flex-col gap-3.5">
+      <div className="flex flex-col gap-3 sm:gap-3.5">
         {/* Featured Highlighted Sheet */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between bg-highlight border-[1.5px] border-ink rounded-scrap p-4 md:px-5 gap-2 shadow-control -rotate-[0.5deg]">
+        <div className="flex flex-col md:flex-row md:items-center justify-between bg-highlight border-[1.5px] border-ink rounded-scrap p-3.5 sm:p-4 md:px-5 gap-1.5 sm:gap-2 shadow-control -rotate-[0.5deg]">
           <div className="md:w-1/3">
-            <span className="font-marker text-2xl font-bold text-[#2b2200]">
+            <span className="font-marker text-xl sm:text-2xl font-bold text-[#2b2200]">
               {ledger.featured.category}
             </span>
           </div>
@@ -46,10 +46,10 @@ export function SkillsLedger({ ledger }: SkillsLedgerProps) {
         {ledger.rows.map((row, idx) => (
           <div
             key={idx}
-            className="flex flex-col md:flex-row md:items-center justify-between bg-scrap border-[1.5px] border-line rounded-scrap p-4 md:px-5 gap-2 shadow-scrap-sm"
+            className="flex flex-col md:flex-row md:items-center justify-between bg-scrap border-[1.5px] border-line rounded-scrap p-3.5 sm:p-4 md:px-5 gap-1.5 sm:gap-2 shadow-scrap-sm"
           >
             <div className="md:w-1/3">
-              <span className="font-marker text-2xl font-bold text-ink">
+              <span className="font-marker text-xl sm:text-2xl font-bold text-ink">
                 {row.category}
               </span>
             </div>

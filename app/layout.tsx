@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Caveat, Patrick_Hand } from "next/font/google";
 import "./globals.css";
 
@@ -19,6 +19,13 @@ const patrickHand = Patrick_Hand({
 export const metadata: Metadata = {
   title: "Godwyn O. Neri — Full-Stack Developer & Systems Specialist",
   description: "Portfolio working sheet for Godwyn O. Neri, 4th-Year BSIT at STI College Alabang. Full-stack engineering, low-latency Windows systems, and IoT.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({

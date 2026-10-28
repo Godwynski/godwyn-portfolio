@@ -10,7 +10,7 @@ export function AcademicDisclosures({ items }: AcademicDisclosuresProps) {
     <section aria-labelledby="academic-heading" className="space-y-4">
       <h2
         id="academic-heading"
-        className="font-marker text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-ink flex items-center gap-3"
+        className="font-marker text-[clamp(1.6rem,4.5vw,2.5rem)] font-bold text-ink flex items-center gap-2.5 sm:gap-3"
       >
         <svg
           width="28"
@@ -35,12 +35,12 @@ export function AcademicDisclosures({ items }: AcademicDisclosuresProps) {
         {items.map((item, idx) => (
           <details
             key={idx}
-            className="group bg-scrap border-[1.5px] border-ink rounded-control p-3.5 px-5 shadow-control transition-all"
+            className="group bg-scrap border-[1.5px] border-ink rounded-control p-3 sm:p-3.5 sm:px-5 shadow-control transition-all"
           >
-            <summary className="font-marker text-2xl font-bold text-ink cursor-pointer list-none [&::-webkit-details-marker]:hidden flex items-center justify-between select-none">
+            <summary className="font-marker text-xl sm:text-2xl font-bold text-ink cursor-pointer list-none [&::-webkit-details-marker]:hidden flex items-center justify-between gap-2.5 select-none min-h-[48px] py-1">
               <span>{item.title}</span>
               <span
-                className="text-2xl text-accent transition-transform duration-100 group-open:rotate-45"
+                className="text-2xl text-accent transition-transform duration-100 group-open:rotate-45 shrink-0"
                 aria-hidden="true"
               >
                 +

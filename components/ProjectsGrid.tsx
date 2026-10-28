@@ -7,10 +7,10 @@ interface ProjectsGridProps {
 
 export function ProjectsGrid({ projects }: ProjectsGridProps) {
   return (
-    <section aria-labelledby="projects-heading" className="space-y-6">
+    <section aria-labelledby="projects-heading" className="space-y-5 sm:space-y-6">
       <h2
         id="projects-heading"
-        className="font-marker text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-ink flex items-center gap-3"
+        className="font-marker text-[clamp(1.6rem,4.5vw,2.5rem)] font-bold text-ink flex items-center gap-2.5 sm:gap-3"
       >
         <svg
           width="28"
@@ -33,21 +33,21 @@ export function ProjectsGrid({ projects }: ProjectsGridProps) {
         <span>Engineered Systems & Featured Projects</span>
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 items-start">
         {projects.map((project, idx) => (
           <article
             key={idx}
-            className={`bg-scrap border-[1.5px] border-line rounded-scrap p-6 shadow-scrap hover:-translate-y-0.5 transition-transform ${
+            className={`bg-scrap border-[1.5px] border-line rounded-scrap p-4 sm:p-6 shadow-scrap hover:-translate-y-0.5 transition-transform ${
               idx % 2 === 1 ? "md:mt-6" : ""
             }`}
           >
-            <div className="flex items-center justify-between mb-2">
+            <div className="flex flex-wrap items-center justify-between gap-1 mb-2">
               <span className="text-[21px] text-annotation border-b-[1.5px] border-dashed border-annotation pb-0.5">
                 {project.tag} &bull; {project.period}
               </span>
             </div>
 
-            <h3 className="font-marker text-2xl font-bold text-ink mb-1.5 leading-snug">
+            <h3 className="font-marker text-xl sm:text-2xl font-bold text-ink mb-1.5 leading-snug">
               {project.title}
             </h3>
 

@@ -17,14 +17,14 @@ export function HeroSection({ onOpenResume }: HeroSectionProps) {
       aria-labelledby="hero-title"
     >
       {/* Left Column: Heading, Bio, Actions */}
-      <div className="flex-1 max-w-[680px]">
-        <span className="inline-block text-[21px] text-annotation border-b-[1.5px] border-dashed border-annotation pb-0.5 mb-2">
+      <div className="flex-1 max-w-[680px] w-full">
+        <span className="inline-block text-[21px] text-annotation border-b-[1.5px] border-dashed border-annotation pb-0.5 mb-2 max-w-full break-words">
           Working Sheet / Portfolio — {profile.school}
         </span>
 
         <h1
           id="hero-title"
-          className="font-marker text-[clamp(2.1rem,5vw,3.6rem)] font-bold text-ink leading-[1.14] mb-5 tracking-tight"
+          className="font-marker text-[clamp(2.1rem,5vw,3.6rem)] font-bold text-ink leading-[1.14] mb-5 tracking-tight break-words"
         >
           Hi, I&apos;m Godwyn. I engineer{" "}
           <span className="bg-highlight text-[#2b2200] px-1.5 rounded-scrap inline-block -rotate-[0.5deg]">
@@ -37,10 +37,10 @@ export function HeroSection({ onOpenResume }: HeroSectionProps) {
           <p>{profile.summary}</p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-4 mt-6 relative">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 mt-6 relative">
           <a
             href={`mailto:${profile.email}`}
-            className="inline-flex items-center gap-2 bg-accent text-scrap border-[1.5px] border-ink rounded-control px-5 py-2.5 font-bold shadow-control hover:shadow-[1px_1px_0px_#38352f] hover:brightness-95 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all text-[23px]"
+            className="inline-flex items-center justify-center gap-2 bg-accent text-scrap border-[1.5px] border-ink rounded-control px-5 py-2.5 font-bold shadow-control hover:shadow-[1px_1px_0px_#38352f] hover:brightness-95 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all text-[23px] min-h-[48px] w-full sm:w-auto"
           >
             <span>Contact Godwyn</span>
             <span aria-hidden="true">&rarr;</span>
@@ -49,7 +49,7 @@ export function HeroSection({ onOpenResume }: HeroSectionProps) {
           <button
             type="button"
             onClick={onOpenResume}
-            className="inline-flex items-center gap-2 bg-scrap text-ink border-[1.5px] border-ink rounded-control px-5 py-2.5 font-bold shadow-control hover:bg-highlight hover:-rotate-[0.5deg] hover:shadow-[1px_1px_0px_#38352f] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all text-[23px] cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 bg-scrap text-ink border-[1.5px] border-ink rounded-control px-5 py-2.5 font-bold shadow-control hover:bg-highlight hover:-rotate-[0.5deg] hover:shadow-[1px_1px_0px_#38352f] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all text-[23px] cursor-pointer min-h-[48px] w-full sm:w-auto"
           >
             <span>Preview Resume</span>
           </button>
@@ -76,25 +76,25 @@ export function HeroSection({ onOpenResume }: HeroSectionProps) {
 
       {/* Right Column: Taped Photo & Marginalia Note */}
       <aside
-        className="w-full md:w-[300px] flex flex-col gap-6 shrink-0"
+        className="w-full md:w-[300px] flex flex-col gap-6 shrink-0 items-center md:items-stretch"
         aria-label="Reference photo and quick facts"
       >
         {/* Taped Photo Mount */}
-        <div className="relative bg-scrap border-[1.5px] border-line rounded-scrap p-4 pb-3 shadow-scrap rotate-1 self-center w-full max-w-[280px]">
+        <div className="relative bg-scrap border-[1.5px] border-line rounded-scrap p-4 pb-3 shadow-scrap rotate-1 self-center w-full max-w-[260px] sm:max-w-[280px]">
           {/* Translucent Yellow Tape Strip */}
           <div
             className="absolute -top-3 left-1/2 -translate-x-1/2 -rotate-[1.5deg] w-20 h-5 bg-highlight/75 border-l border-r border-dashed border-line/80 pointer-events-none z-10"
             aria-hidden="true"
           />
 
-          <div className="w-full h-[240px] overflow-hidden border border-line bg-[#e2ddd3] relative">
+          <div className="w-full h-[220px] sm:h-[240px] overflow-hidden border border-line bg-[#e2ddd3] relative">
             <Image
               src="/photo.png"
               alt="Portrait photo of Godwyn O. Neri"
               fill
               className="object-cover object-top"
               priority
-              sizes="280px"
+              sizes="(max-width: 640px) 260px, 280px"
             />
           </div>
           <p className="mt-2 text-[21px] text-ink-muted text-center leading-tight">
@@ -103,12 +103,12 @@ export function HeroSection({ onOpenResume }: HeroSectionProps) {
         </div>
 
         {/* Blue Handwritten Marginalia Scrap */}
-        <div className="relative bg-scrap border-[1.5px] border-line rounded-scrap p-4 text-annotation -rotate-[0.75deg] shadow-scrap">
+        <div className="relative bg-scrap border-[1.5px] border-line rounded-scrap p-3.5 sm:p-4 text-annotation -rotate-[0.75deg] shadow-scrap w-full max-w-[280px] sm:max-w-none">
           <div
             className="absolute -top-2 right-4 w-12 h-4 bg-white/70 border-l border-r border-dashed border-line rotate-3 pointer-events-none"
             aria-hidden="true"
           />
-          <h2 className="font-marker text-2xl font-bold mb-1 text-annotation">
+          <h2 className="font-marker text-xl sm:text-2xl font-bold mb-1 text-annotation">
             Quick Notes
           </h2>
           <ul className="text-[21px] leading-snug space-y-1">

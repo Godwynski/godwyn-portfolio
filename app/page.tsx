@@ -16,7 +16,7 @@ export default function HomePage() {
 
   return (
     <>
-      <main className="max-w-[1060px] mx-auto px-4 py-8 sm:py-12 flex flex-col gap-12 sm:gap-14">
+      <main className="max-w-[1060px] mx-auto px-3.5 sm:px-4 py-6 sm:py-12 flex flex-col gap-10 sm:gap-14 w-full">
         {/* Hero Section */}
         <HeroSection onOpenResume={() => setIsResumeOpen(true)} />
 

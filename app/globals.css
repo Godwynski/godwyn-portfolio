@@ -19,6 +19,10 @@
   --dp-motion-control: 100ms;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--dp-color-ground);
   color: var(--dp-color-ink);
@@ -28,6 +32,10 @@ body {
   min-height: 100vh;
   position: relative;
   -webkit-font-smoothing: antialiased;
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+  padding-bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Subtle paper grain texture */
@@ -52,6 +60,13 @@ button:focus-visible,
 summary:focus-visible {
   outline: 2px dashed var(--dp-color-annotation);
   outline-offset: 4px;
+}
+
+/* Touch input refinements */
+@media (pointer: coarse) {
+  a, button, summary {
+    min-height: 44px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
